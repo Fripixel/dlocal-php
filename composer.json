@@ -12,7 +12,7 @@
     "require": {
         "hassankhan/config": "^2.1",
         "monolog/monolog": "^1.25",
-        "guzzlehttp/guzzle": "^6.2@dev"
+        "guzzlehttp/guzzle": "^5.1"
     },
     "autoload": {
         "files": [
