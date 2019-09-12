@@ -2,6 +2,7 @@
     "name": "fripixel/dlocal-php",
     "description": "D-Local PHP SDK by Fripixel",
     "type": "library",
+    "minimum-stability": "dev",    
     "authors": [{
         "name": "Fripixel",
         "email": "contato@fripixel.com.br"
