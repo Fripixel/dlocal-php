@@ -2,6 +2,7 @@
     "name": "fripixel/dlocal-php",
     "description": "D-Local PHP SDK by Fripixel",
     "type": "library",
+    "prefer-stable": true,
     "minimum-stability": "dev",    
     "license": "MIT",
     "authors": [{
@@ -9,9 +10,9 @@
         "email": "contato@fripixel.com.br"
     }],
     "require": {
-        "guzzlehttp/guzzle": "6.2@dev",
         "hassankhan/config": "^2.1",
-        "monolog/monolog": "^1.25"
+        "monolog/monolog": "^1.25",
+        "guzzlehttp/guzzle": "6.2@dev"
     },
     "autoload": {
         "files": [
