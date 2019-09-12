@@ -7,7 +7,7 @@
         "email": "contato@fripixel.com.br"
     }],
     "require": {
-        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/guzzle": "6.2@dev",
         "hassankhan/config": "^2.1",
         "monolog/monolog": "^1.25"
     },
