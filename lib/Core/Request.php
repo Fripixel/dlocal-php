@@ -3,6 +3,7 @@
 namespace Fripixel\DLocal\Core;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 class Request
 {
@@ -25,82 +26,27 @@ class Request
 
     public function get($url, $headers)
     {
-
-        $headers = $this->convertHeaders($headers);
-
-        $curl = curl_init();
-
-        $url = $this->baseURI . $url;
-        
-        curl_setopt_array($curl, [
-            CURLOPT_URL            => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => $this->timeout,
-            CURLOPT_CUSTOMREQUEST  => 'GET',
-            CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
-            CURLOPT_FAILONERROR    => false,
-            CURLOPT_HTTPHEADER     => $headers
-        ]);
-
-        $response = curl_exec($curl);
-        $error    = curl_error($curl);
-
-        curl_close($curl);
-
-        if (!$error) {
-            return $response;
-        } else {
-            echo "cURL Error #:" . $error;
+        try {
+            $response = $this->client->request("GET", $url, [
+                "headers" => $headers,
+            ]);
+            return $response->getBody();
+        } catch (ClientException $e) {
+            return $e->getResponse()->getBody();
         }
     }
 
     public function post($url, $headers, $body)
     {
-
-        $headers = $this->convertHeaders($headers);
-
-        $body = $this->convertBody($body);
-
-        $curl = curl_init();
-
-        $url = $this->baseURI . $url;
-
-        curl_setopt_array($curl, [
-            CURLOPT_URL            => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => $this->timeout,
-            CURLOPT_CUSTOMREQUEST  => "POST",
-            CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
-            CURLOPT_FAILONERROR    => false,
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $body,
-            CURLOPT_HTTPHEADER     => $headers,
-        ]);
-
-        $response = curl_exec($curl);
-        $error    = curl_error($curl);
-
-        curl_close($curl);
-
-        if (!$error) {
-            return $response;
-        } else {
-            echo "cURL Error #:" . $error;
+        try {
+            $response = $this->client->request("POST", $url, [
+                "headers" => $headers,
+                "json"    => $body,
+            ]);
+            return $response->getBody();
+        } catch (ClientException $e) {
+            return $e->getResponse()->getBody();
         }
     }
-
-    public function convertHeaders($headers)
-    {
-        $convertedHeaders = [];
-        foreach ($headers as $key => $header) {
-            $value = "{$key}: {$header}";
-            array_push($convertedHeaders, $value);
-        }
-        return $convertedHeaders;
-    }
-
-    public function convertBody($body)
-    {
-        return json_encode($body);
-    }
+    
 }

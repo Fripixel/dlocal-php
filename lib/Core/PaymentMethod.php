@@ -309,7 +309,7 @@ class PaymentMethod
     public function toJson()
     {
         // guzzle streams response
-        return $this->response;
+        return $this->response->getContents();
     }
 
     public function toObject()
