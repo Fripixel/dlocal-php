@@ -1,0 +1,22 @@
+{
+    "name": "fripixel/dlocal-php-sdk",
+    "description": "D-Local PHP SDK by Fripixel",
+    "type": "library",
+    "authors": [{
+        "name": "Fripixel",
+        "email": "contato@fripixel.com.br"
+    }],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "hassankhan/config": "^2.1",
+        "monolog/monolog": "^1.25"
+    },
+    "autoload": {
+        "files": [
+            "lib/helpers/index.php"
+        ],
+        "psr-4": {
+            "Fripixel\\DLocal\\": "lib/"
+        }
+    }
+}
