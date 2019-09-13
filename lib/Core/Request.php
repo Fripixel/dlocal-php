@@ -10,7 +10,7 @@ class Request
 
     public $baseURI = null;
 
-    public $timeout = 2.0;
+    public $timeout = 30.0;
 
     public function __construct($config, $debug = false)
     {
