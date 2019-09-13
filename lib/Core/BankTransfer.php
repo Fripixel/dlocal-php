@@ -4,9 +4,9 @@ namespace Fripixel\DLocal\Core;
 
 class BankTransfer extends PaymentMethod
 {
-    public function __construct($order, $paymentMethodId, $config)
+    public function __construct($order, $paymentMethodId)
     {
-        parent::__construct($config);
+        parent::__construct();
 
         $this->order = $order;
 
