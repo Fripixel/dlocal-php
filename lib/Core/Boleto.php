@@ -20,9 +20,8 @@ class Boleto extends PaymentMethod
 
         $this->currency = $this->config->currency;
 
-        // $this->paymentMethodFlow = $this->config->payment_method_flow;
+        $this->paymentMethodFlow = $this->config->payment_method_flow["boleto"];
 
-        $this->paymentMethodFlow = "REDIRECT";
     }
 
     public function generate()

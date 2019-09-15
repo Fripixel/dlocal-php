@@ -18,9 +18,8 @@ class BankTransfer extends PaymentMethod
 
         $this->currency = $this->config->currency;
 
-        // $this->paymentMethodFlow = $this->config->payment_method_flow;
+        $this->paymentMethodFlow = $this->config->payment_method_flow["bank_transfer"];
 
-        $this->paymentMethodFlow = "REDIRECT";
     }
 
     public function generate()

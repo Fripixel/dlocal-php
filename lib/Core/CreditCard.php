@@ -4,9 +4,9 @@ namespace Fripixel\DLocal\Core;
 
 class CreditCard extends PaymentMethod
 {
-    public function __construct($order, $card, $customer, $config)
+    public function __construct($order, $card, $customer)
     {
-        parent::__construct($config);
+        parent::__construct();
 
         $this->order = $order;
 
@@ -22,7 +22,7 @@ class CreditCard extends PaymentMethod
 
         $this->currency = $this->config->currency;
 
-        $this->paymentMethodFlow = $this->config->payment_method_flow;
+        $this->paymentMethodFlow = $this->config->payment_method_flow["credit_card"];
     }
 
     public function generate()
