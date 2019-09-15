@@ -63,7 +63,7 @@ class PaymentMethod
         $this->userAgent       = $this->getUserAgent();
         $this->secretKey       = $this->getSecretKey();
         $this->notificationURL = $this->getNotificationURL();
-        $this->callbackURL     = $this->getCallbackURL();
+        $this->callbackURL     = $this->getCallbackURL();        
     }
 
     public function __toString()

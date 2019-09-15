@@ -4,9 +4,9 @@ namespace Fripixel\DLocal\Core;
 
 class CreditCard extends PaymentMethod
 {
-    public function __construct($order, $card, $customer, $config)
+    public function __construct($order, $card, $customer)
     {
-        parent::__construct($config);
+        parent::__construct();
 
         $this->order = $order;
 
@@ -22,13 +22,21 @@ class CreditCard extends PaymentMethod
 
         $this->currency = $this->config->currency;
 
-        $this->paymentMethodFlow = $this->config->payment_method_flow;
-
-        // $this->paymentMethodFlow = "REDIRECT";
+        $this->paymentMethodFlow = $this->config->payment_method_flow["credit_card"];
     }
 
     public function generate()
     {
+        $card = [
+            "holder_name"      => $this->card->holder_name,
+            "number"           => $this->card->number,
+            "cvv"              => $this->card->cvv,
+            "expiration_month" => $this->card->expiration_month,
+            "expiration_year"  => $this->card->expiration_year,
+            "installments"     => $this->card->installments,
+            "installments_id"   => $this->card->installments_id,
+        ];
+
         $this->body = [
             "amount"              => $this->order->amount,
             "currency"            => $this->currency,
@@ -41,19 +49,14 @@ class CreditCard extends PaymentMethod
                 "email"    => $this->order->payer->email,
                 "document" => $this->order->payer->document,
             ],
-            "card"                => [
-                "holder_name"      => $this->card->holder_name,
-                "number"           => $this->card->number,
-                "cvv"              => $this->card->cvv,
-                "expiration_month" => $this->card->expiration_month,
-                "expiration_year"  => $this->card->expiration_year,
-                "installments"     => $this->card->installments,
-                "installments_id"   => $this->card->installments_id,
-            ],
             "order_id"            => $this->order->id,
             "notification_url"    => $this->notificationURL,
             "callback_url"        => $this->callbackURL,
         ];
+
+        if ($this->paymentMethodFlow === "DIRECT") {
+            $this->body["card"] = $card;
+        }
 
         if (isset($this->customer->user_reference)) {
             $this->body["payer"]["user_reference"] = $this->customer->user_reference;
