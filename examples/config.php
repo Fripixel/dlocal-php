@@ -10,7 +10,7 @@ return [
         "country"             => "BR",
         "currency"            => "BRL",
         "payment_method_flow" => [
-            "credit_card"   => "DIRECT",
+            "credit_card"   => "REDIRECT",
             "bank_transfer" => "REDIRECT",
             "boleto"        => "REDIRECT",
         ],
