@@ -23,6 +23,8 @@ class CreditCard extends PaymentMethod
         $this->currency = $this->config->currency;
 
         $this->paymentMethodFlow = $this->config->payment_method_flow;
+
+        // $this->paymentMethodFlow = "REDIRECT";
     }
 
     public function generate()
