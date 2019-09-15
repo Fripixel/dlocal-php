@@ -14,8 +14,16 @@ return [
             "bank_transfer" => "REDIRECT",
             "boleto"        => "REDIRECT",
         ],
-        "notification_url"    => "https://dev.dlocal-php-sdk.com.br/notifications.php",
-        "callback_url"        => "https://dev.dlocal-php-sdk.com.br",
+        "notification_url"    => [
+            "credit_card"   => "https://dev.dlocal-php-sdk.com.br",
+            "bank_transfer" => "https://dev.dlocal-php-sdk.com.br",
+            "boleto"        => "https://dev.dlocal-php-sdk.com.br",
+        ],
+        "callback_url"        => [
+            "credit_card"   => "https://dev.dlocal-php-sdk.com.br",
+            "bank_transfer" => "https://dev.dlocal-php-sdk.com.br",
+            "boleto"        => "https://dev.dlocal-php-sdk.com.br",
+        ],
     ],
     "production" => [
         "base_uri"            => "https://api.dlocal.com",
@@ -30,7 +38,15 @@ return [
             "bank_transfer" => "REDIRECT",
             "boleto"        => "REDIRECT",
         ],
-        "notification_url"    => "https://dev.dlocal-php-sdk.com.br/notifications.php",
-        "callback_url"        => "https://dev.dlocal-php-sdk.com.br",
+        "notification_url"    => [
+            "credit_card"   => "https://dev.dlocal-php-sdk.com.br",
+            "bank_transfer" => "https://dev.dlocal-php-sdk.com.br",
+            "boleto"        => "https://dev.dlocal-php-sdk.com.br",
+        ],
+        "callback_url"        => [
+            "credit_card"   => "https://dev.dlocal-php-sdk.com.br",
+            "bank_transfer" => "https://dev.dlocal-php-sdk.com.br",
+            "boleto"        => "https://dev.dlocal-php-sdk.com.br",
+        ],
     ],
 ];

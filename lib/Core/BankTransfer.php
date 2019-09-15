@@ -20,6 +20,10 @@ class BankTransfer extends PaymentMethod
 
         $this->paymentMethodFlow = $this->config->payment_method_flow["bank_transfer"];
 
+        $this->notificationUrl = $this->config->notification_url["bank_transfer"];
+
+        $this->callbackUrl = $this->config->callback_url["bank_transfer"];
+
     }
 
     public function generate()
