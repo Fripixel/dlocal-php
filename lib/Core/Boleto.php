@@ -21,6 +21,10 @@ class Boleto extends PaymentMethod
         $this->currency = $this->config->currency;
 
         $this->paymentMethodFlow = $this->config->payment_method_flow["boleto"];
+
+        $this->notificationUrl = $this->config->notification_url["boleto"];
+
+        $this->callbackUrl = $this->config->callback_url["boleto"];
         
     }
 

@@ -23,6 +23,10 @@ class CreditCard extends PaymentMethod
         $this->currency = $this->config->currency;
 
         $this->paymentMethodFlow = $this->config->payment_method_flow["credit_card"];
+
+        $this->notificationUrl = $this->config->notification_url["credit_card"];
+
+        $this->callbackUrl = $this->config->callback_url["credit_card"];        
     }
 
     public function generate()
