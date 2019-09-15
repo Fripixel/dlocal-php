@@ -7,7 +7,7 @@ define("DLOCAL_CONFIG_PATH", __DIR__ . '/config.php');
 
 define("DLOCAL_ENV", "sandbox"); 
 
-use Fripixel\DLocal\Core\Card;
+use Fripixel\DLocal\Data\Card;
 use Fripixel\DLocal\Core\CreditCard;
 use Fripixel\DLocal\Core\Installments;
 use Fripixel\DLocal\Data\Order;
