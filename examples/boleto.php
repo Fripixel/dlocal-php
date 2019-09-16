@@ -12,7 +12,7 @@ use Fripixel\DLocal\Data\Order;
 
 $order                  = new Order;
 $order->id              = getOrderId(9);
-$order->amount          = 100.00;
+$order->amount          = 100.50;
 $order->description     = "200";
 $order->payer           = (object)[
 	"name" => "Thiago Gabriel",

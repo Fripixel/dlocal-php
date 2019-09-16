@@ -47,7 +47,7 @@ class PaymentMethod
 
     public $paymentMethodFlow = "REDIRECT";
 
-    public $notificationUrl = "";
+    public $notificationURL = "";
 
     public $callbackURL = "";
 
@@ -240,19 +240,19 @@ class PaymentMethod
     /**
      * @return mixed
      */
-    public function getNotificationUrl()
+    public function getNotificationURL()
     {
         return $this->config->notification_url;
     }
 
     /**
-     * @param mixed $notificationUrl
+     * @param mixed $notificationURL
      *
      * @return self
      */
-    public function setNotificationUrl($notificationUrl)
+    public function setNotificationURL($notificationURL)
     {
-        $this->notificationUrl = $notificationUrl;
+        $this->notificationURL = $notificationURL;
 
         return $this;
     }

@@ -22,9 +22,9 @@ class Boleto extends PaymentMethod
 
         $this->paymentMethodFlow = $this->config->payment_method_flow["boleto"];
 
-        $this->notificationUrl = $this->config->notification_url["boleto"];
+        $this->notificationURL = $this->config->notification_url["boleto"];
 
-        $this->callbackUrl = $this->config->callback_url["boleto"];
+        $this->callbackURL = $this->config->callback_url["boleto"];
         
     }
 
@@ -43,7 +43,8 @@ class Boleto extends PaymentMethod
                 "document" => $this->order->payer->document,
             ],
             "order_id"            => $this->order->id,
-            "notification_url"    => $this->notificationUrl,
+            "notification_url"    => $this->notificationURL,
+            "callback_url"        => $this->callbackURL,
         ];
 
         $this->headers = $this->getHeaders();
