@@ -5,7 +5,7 @@ require __DIR__ . "/../vendor/autoload.php";
 
 define("DLOCAL_CONFIG_PATH", __DIR__ . '/config.php'); 
 
-define("DLOCAL_ENV", "sandbox"); 
+define("DLOCAL_ENV", "production"); 
 
 use Fripixel\DLocal\Core\Installments;
 use Fripixel\DLocal\Data\Card;

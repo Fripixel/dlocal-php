@@ -17,7 +17,14 @@ $order->description     = "200";
 $order->payer           = (object)[
 	"name" => "Thiago Gabriel",
 	"email" => "thiago@example.com",
-	"document" => "53033315550"
+	"document" => "53033315550",
+    "address"  => [
+        "state"    => getStateUF("Rio de Janeiro"),
+        "city"     => "Petrópolis",
+        "zip_code" => "28634-890",
+        "street"   => "Rua de Teste",
+        "number"   => "123",
+    ],	
 ];
 
 $paymentMethodId = "BB";

@@ -39,6 +39,7 @@ class BankTransfer extends PaymentMethod
                 "name"     => $this->order->payer->name,
                 "email"    => $this->order->payer->email,
                 "document" => $this->order->payer->document,
+                "address" => $this->order->payer->address,                
             ],
             "order_id"            => $this->order->id,
             "notification_url"    => $this->notificationURL,
