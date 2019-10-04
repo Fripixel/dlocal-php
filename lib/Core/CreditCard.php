@@ -48,12 +48,7 @@ class CreditCard extends PaymentMethod
             "payment_method_id"   => $this->paymentMethodId,
             "description"         => $this->order->description,
             "payment_method_flow" => $this->paymentMethodFlow,
-            "payer"               => [
-                "name"     => $this->order->payer->name,
-                "email"    => $this->order->payer->email,
-                "document" => $this->order->payer->document,
-                "address" => $this->order->payer->address,
-            ],
+            "payer"               => $this->order->payer,
             "order_id"            => $this->order->id,
             "notification_url"    => $this->notificationURL,
             "callback_url"        => $this->callbackURL,
